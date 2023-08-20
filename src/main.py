@@ -8,7 +8,9 @@ import logging
 import logging.config
 import os
 from datetime import datetime
+
 from dotenv import find_dotenv, load_dotenv
+import collecting
 
 # find .env file in parent directory
 env_file = find_dotenv()
@@ -33,13 +35,9 @@ def setup_logging():
     )
 
 
-def test():
-    print('Testing the implementation of logging')
-
-
 if __name__ == "__main__":
     setup_logging()
     logger = logging.getLogger(__name__)
     logger.info("Program started")
-    test()
+    print(collecting.sum_nums(3, 4))
     logger.info("Program finished")
